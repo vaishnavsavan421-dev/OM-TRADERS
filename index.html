@@ -3,199 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OM TRADER</title>
+<title>OM TRADERS</title>
+
+<!-- META PIXEL CODE -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '792443543805858');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=792443543805858&ev=PageView&noscript=1"/>
+</noscript>
+<!-- META PIXEL END -->
 
 <style>
-body{
-  background:#000;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:Arial, sans-serif;
-  color:#fff;
+body {
+  margin: 0;
+  padding: 0;
+  background: #050505;
+  font-family: Arial, sans-serif;
+  color: #fff;
 }
 
-/* 🔥 NEON RGB BORDER CARD */
-.card{
-  position:relative;
-  width:92%;
-  max-width:360px;
-  padding:32px 22px;
-  border-radius:22px;
-  background:#05080f;
-  text-align:center;
-  box-shadow:
-    0 0 25px rgba(0,255,255,.25),
-    0 0 50px rgba(0,255,255,.15);
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border-radius:26px;
-  background:linear-gradient(
-    120deg,
-    #ff0000,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0066ff,
-    #ff00ff,
-    #ff0000
-  );
-  filter:blur(8px);
-  animation:neonMove 3s linear infinite;
-  z-index:-1;
+.box {
+  text-align: center;
+  padding: 40px 25px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 15px;
+  position: relative;
+  animation: glowBorder 2s infinite alternate;
 }
 
-@keyframes neonMove{
-  0%{background-position:0% 50%;}
-  100%{background-position:300% 50%;}
+@keyframes glowBorder {
+  0% { box-shadow: 0 0 10px #00ffcc; }
+  100% { box-shadow: 0 0 30px #00ffcc; }
 }
 
-/* LOGO */
-.logo{
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  background:#fff;
-  margin:0 auto 14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #00ffcc;
+  text-shadow: 0 0 12px #00ffcc;
+  letter-spacing: 2px;
 }
 
-.logo img{ width:90%; }
-
-/* BARS */
-.bars{
-  display:flex;
-  justify-content:center;
-  gap:6px;
-  margin:10px 0 16px;
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-.bars span{
-  width:6px;
-  height:16px;
-  background:#3b82f6;
-  animation:bars 1.2s infinite ease-in-out;
+.join-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  background: #00ffcc;
+  border-radius: 40px;
+  text-decoration: none;
+  animation: buttonPulse 1.2s infinite;
 }
 
-.bars span:nth-child(2){animation-delay:.1s}
-.bars span:nth-child(3){animation-delay:.2s}
-.bars span:nth-child(4){animation-delay:.3s}
-.bars span:nth-child(5){animation-delay:.4s}
-
-@keyframes bars{
-  0%,100%{height:10px;}
-  50%{height:26px;}
-}
-
-/* ✨ ANIMATED TITLE */
-h1{
-  font-size:28px;
-  margin-bottom:6px;
-  animation:textGlow 2s infinite alternate;
-}
-
-@keyframes textGlow{
-  from{
-    text-shadow:
-      0 0 6px #3b82f6,
-      0 0 12px #3b82f6;
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #00ffcc;
   }
-  to{
-    text-shadow:
-      0 0 12px #22d3ee,
-      0 0 24px #22d3ee;
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 28px #00ffcc;
   }
-}
-
-.subtitle{
-  font-size:14px;
-  color:#60a5fa;
-  margin-bottom:10px;
-}
-
-.members{
-  font-size:15px;
-  color:#facc15;
-  margin-bottom:20px;
-}
-
-/* 🚀 CTA BUTTON */
-.btn{
-  display:inline-block;
-  padding:15px 32px;
-  border-radius:30px;
-  font-weight:bold;
-  color:#fff;
-  text-decoration:none;
-  background:linear-gradient(270deg,#2563eb,#22d3ee,#2563eb);
-  background-size:400% 400%;
-  animation:btnMove 3s infinite linear;
-  box-shadow:
-    0 0 12px rgba(59,130,246,.9),
-    0 0 25px rgba(34,211,238,.7);
-}
-
-@keyframes btnMove{
-  0%{background-position:0% 50%;}
-  100%{background-position:100% 50%;}
-}
-
-ul{
-  margin-top:22px;
-  text-align:left;
-  font-size:13px;
-  line-height:1.6;
-}
-
-ul li{ margin-bottom:6px; }
-
-.footer{
-  margin-top:14px;
-  font-size:10px;
-  color:#aaa;
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #00ffcc;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
+  <div class="box">
+    <h1>OM TRADERS</h1>
+    <p>
+      Daily High Accuracy Trades <br>
+      Strict Risk Management <br>
+      No Bakchodi – Only Trading
+    </p>
 
-  <div class="logo">
-    <img src="logo.png" alt="OM TRADER">
+    <a href="https://t.me/+oW3TcHGPqVI5YTk1"
+       class="join-btn"
+       onclick="fbq('track','Lead')">
+       JOIN TELEGRAM
+    </a>
   </div>
-
-  <div class="bars">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-
-  <h1>OM TRADER</h1>
-  <div class="subtitle">BankNifty • Nifty • Stock Options</div>
-
-  <div class="members">👥 Live Members: 33856+</div>
-
-  <a class="btn" href="https://t.me/+8idIpS5pSj5hZmM1" target="_blank">
-    Join Telegram +
-  </a>
-
-  <ul>
-    <li>Advanced trading education & strategies</li>
-    <li>Daily market learning & insights</li>
-    <li>Trusted trader community on Telegram</li>
-  </ul>
-
-  <div class="footer">
-    This is for educational purposes only.<br>
-    Market investments are subject to risk.
-  </div>
-
 </div>
 
 </body>
